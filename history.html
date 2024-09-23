@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+
+    <!-- link css path -->
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body class="font-lexend-font">
+    <!-- header part -->
+    <!-- header part -->
+    <header class="w-full">
+      <section class="bg-navBase py-6">
+        <div class="md:w-11/12 mx-auto">
+          <div class="navbar">
+            <div class="navbar-start">
+              <a
+                id="homePage"
+                class="btn bg-btnPrimary text-xl md:w-1/5 text-btnInnerTextColor"
+                >Home</a
+              >
+            </div>
+            <div class="navbar-center">
+              <img src="./assets/logo.png" alt="" width="35px" height="18px" />
+              <ul
+                class="menu menu-horizontal flex justify-center items-center gap-2 mr-2"
+              >
+                <a
+                  href=""
+                  class="text-xl font-medium pt-1 hidden sm:inline-block"
+                  >Donate Bangladesh</a
+                >
+              </ul>
+            </div>
+            <div class="navbar-end gap-2 text-lg font-bold">
+              <img src="./assets/coin.png" alt="" />
+              <span id="current-balance">5500</span>
+              BDT
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- button section -->
+      <section class="flex justify-center md:pt-20 pt-10">
+        <div>
+          <button
+            id="donation-btn-top"
+            class="btn md:btn-md lg:btn-lg mr-4 text-btnInnerTextColor"
+          >
+            Donation
+          </button>
+          <button
+            id="history-btn"
+            class="btn md:btn-md lg:btn-lg text-btnTextOpacity"
+          >
+            History
+          </button>
+        </div>
+      </section>
+    </header>
+
+    <!-- content section -->
+    <main>
+      <section>
+        <div class="flex flex-col w-9/12 mx-auto pt-36">
+          <div
+            id="inner-history"
+            class="history-container justify-center items-center"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <section class="bg-navBase">
+        <div class="w-9/12 mx-auto mt-20 h-32"></div>
+      </section>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the donation history from sessionStorage
+        const donationHistory = sessionStorage.getItem("donationHistory");
+
+        // Display the history in the div with id "inner-history"
+        if (donationHistory) {
+          document.getElementById("inner-history").innerHTML = donationHistory;
+        } else {
+          document.getElementById("inner-history").innerHTML =
+            "<center><p>No donations yet.</p></center>";
+        }
+      });
+
+      ///donation page
+      document
+        .getElementById("donation-btn-top")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "/index.html";
+        });
+    </script>
+
+    <!-- scripts -->
+    <script src="./js/active.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
