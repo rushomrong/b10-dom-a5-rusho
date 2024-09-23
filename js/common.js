@@ -1,10 +1,4 @@
 //share functions for donation
-
-// header balance id - current-balance
-// noakhali balance id - nkhali-balance
-// noakhali input amount id - nkhali-input-amount
-// noakhali btn id - nkhali-donate-btn
-
 //getting all the input data from the input fields
 function getInputFieldValueById(id) {
   //getting the amount
