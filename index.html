@@ -229,20 +229,21 @@
         open modal
       </button>
       <dialog id="my_modal_5" class="modal modal-middle sm:modal-middle">
-        <div class="modal-box text-center">
+        <div class="modal-box text-center flex flex-col justify-center items-center">
           <h3 class="text-4xl font-bold pb-5">Congrates!</h3>
-          <div class="flex justify-center items-center">
+          <div class="flex flex-col justify-center items-center">
             <img src="./assets/coin.png" alt="" />
           </div>
           <p class="py-4 text-md">You Have Donated For Humankind</p>
           <span class="text-lg font-bold">Successfully</span>
-          <ce class="modal-action">
-            <form method="dialog">
-              <!-- if there is a button in form, it will close the modal -->
-              
-               <center> <button class="btn">Close Confirmation</button></center>
-          
-            </form>
+          <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                
+                <button class="btn">Close Confirmation</button>
+              </form>
+
+            </div>
           </div>
         </div>
       </dialog>
