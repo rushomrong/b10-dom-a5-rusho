@@ -20,7 +20,7 @@ function handleDonation(
     } else {
       // Fetching the available balances using shared function
       const currentBalance = getTextFieldValueById(totalBalanceId); // Fetch the total balance
-      const donationBalance = getTextFieldValueById(balanceId); // Fetch specific donation balance (Feni or Noakhali)
+      const donationBalance = getTextFieldValueById(balanceId); // Fetch specific donation balance
 
       // Check if there's enough balance
       if (donateAmount > currentBalance) {
@@ -31,6 +31,10 @@ function handleDonation(
       // Balance calculation
       const newCurrentBalance = currentBalance - donateAmount; //
       const newDonationBalance = donationBalance + donateAmount; //
+
+      //storing the amount as local
+      localStorage.setItem("totalBalance", newCurrentBalance);
+      localStorage.setItem(balanceId, newDonationBalance);
 
       // Updating the new balances
       document.getElementById(totalBalanceId).innerText =
