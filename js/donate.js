@@ -15,7 +15,7 @@ function handleDonation(
       const donateAmount = getInputFieldValueById(inputAmountId);
 
       // Input amount validation
-      if (isNaN(donateAmount)) {
+      if (isNaN(donateAmount) || donateAmount.toString() === "NAN") {
         window.alert("Error! Please enter a valid amount.");
       } else if (donateAmount <= 0) {
         window.alert("Error! Please enter an amount greater than zero.");
